@@ -1,8 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     // var div = document.querySelector('#trans-to');
     console.log('我被执行了！', {
-        'chrome.extension': chrome.extension
+        'chrome': chrome,
     });
+
+    // const backgroundPage = chrome.extension.getBackgroundPage()
+    const button = document.querySelector('#button');
+    console.log('>>>button', button)
+    // button.addEventListener('click', () => {
+    //     console.log('>>>backgroundPage')
+    // }, false)
 });
 
-console.log('空闲时执行')
+// chrome.extension.setIcon('../images/icon-128.png')

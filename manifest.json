@@ -20,5 +20,11 @@
             ],
             "run_at": "document_start"
         }
-    ]
+    ],
+    "action": {
+        "default_icon": "images/icons8-wechat-48.png",
+        "default_title": "Minimal Manifest",
+        "default_popup": "popup.html"
+    },
+    "homepage_url": "https://chatgpt.com/"
 }
