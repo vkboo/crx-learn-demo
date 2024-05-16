@@ -27,7 +27,7 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "js/background.js"
     },
     "homepage_url": "https://chatgpt.com/",
     "web_accessible_resources": [
@@ -39,5 +39,8 @@
                 "<all_urls>"
             ]
         }
+    ],
+    "permissions": [
+        "contextMenus"
     ]
 }
