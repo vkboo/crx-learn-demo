@@ -26,5 +26,18 @@
         "default_title": "Minimal Manifest",
         "default_popup": "popup.html"
     },
-    "homepage_url": "https://chatgpt.com/"
+    "background": {
+        "service_worker": "background.js"
+    },
+    "homepage_url": "https://chatgpt.com/",
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "js/inject.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
 }
