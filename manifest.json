@@ -44,6 +44,7 @@
         "contextMenus"
     ],
     "chrome_url_overrides": {
-        "newtab": "newtab.html",
-    }
+        "newtab": "newtab.html"
+    },
+    "devtools_page": "devtools.html"
 }
