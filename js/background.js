@@ -7,6 +7,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 
 chrome.runtime.onInstalled.addListener(function () {
+
     chrome.contextMenus.create({
         id: 'contextId',
         title: "测试右键菜单",
@@ -15,8 +16,25 @@ chrome.runtime.onInstalled.addListener(function () {
     });
     chrome.contextMenus.onClicked.addListener(function (info, tab) {
         // Handle the click here
-        chrome.tabs.create({ url: 'https://www.baidu.com/s?ie=utf-8&wd=' + encodeURI(info.selectionText) });
+        // chrome.tabs.create({ url: 'https://www.baidu.com/s?ie=utf-8&wd=' + encodeURI(info.selectionText) });
+        chrome.permissions.request({
+            permissions: ['notifications']
+        }, function (granted) {
+            if (granted) {
+                console.log('Notification permission granted.');
+                chrome.notifications.create('notification-id', {
+                    type: 'basic',
+                    iconUrl: '../images/icons8-wechat-48.png',
+                    title: '这是标题',
+                    message: '您刚才点击了自定义右键菜单！'
+                });
+            } else {
+                console.log('Notification permission not granted.');
+            }
+        });
+
     });
+
 
 });
 
