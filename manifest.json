@@ -46,5 +46,8 @@
     "chrome_url_overrides": {
         "newtab": "newtab.html"
     },
-    "devtools_page": "devtools.html"
+    "devtools_page": "devtools.html",
+    "omnibox": {
+        "keyword": "go"
+    }
 }
