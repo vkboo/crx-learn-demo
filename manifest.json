@@ -41,7 +41,11 @@
         }
     ],
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "http://*/*",
+        "https://*/*"
     ],
     "optional_permissions": [
         "notifications"
