@@ -1,24 +1,3 @@
-
-document.addEventListener('DOMContentLoaded', function () {
-    // var div = document.querySelector('#trans-to');
-    injectCustomJs();
-
-    chrome.runtime.sendMessage({ action: 'getBrowserInfo' }, function (response) {
-        console.log(response);
-        // console.log(response.browserInfo);
-    });
-
-
-    // const backgroundPage = chrome.extension.getBackgroundPage()
-    // const button = document.querySelector('#button');
-    // console.log('>>>button', button)
-    // button.addEventListener('click', () => {
-    //     console.log('>>>backgroundPage')
-    // }, false)
-});
-
-// chrome.extension.setIcon('../images/icon-128.png')
-
 // 向页面注入JS
 function injectCustomJs(jsPath) {
     jsPath = jsPath || 'js/inject.js';
@@ -32,4 +11,27 @@ function injectCustomJs(jsPath) {
     };
     document.head.appendChild(temp);
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    injectCustomJs();
+
+    chrome.runtime.sendMessage({ action: 'getBrowserInfo' }, function (response) {
+        console.log(response);
+    });
+
+    // window.addEventListener("message", function (e) {
+    //     console.log(e.data);
+    // }, false);
+
+    setTimeout(() => {
+        window.postMessage({ "test": '你好！' }, '*');
+
+    }, 3000)
+
+
+
+});
+
 
